@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Careers — Exelytix</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav container">
+    <a class="brand" href="index.html">EXELYTIX</a>
+    <nav class="menu">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <main class="container form-page">
+    <h1>Express Your Interest</h1>
+    <p>Tell us about yourself and how you'd like to contribute to Exelytix.</p>
+
+    <form id="careersForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID_HERE" method="POST">
+      <label>Full Name *</label>
+      <input name="name" type="text" placeholder="Your full name" required>
+
+      <label>Email *</label>
+      <input name="email" type="email" placeholder="your.email@example.com" required>
+
+      <label>Phone Number</label>
+      <input name="phone" type="tel" placeholder="+91 XXXXX XXXXX">
+
+      <label>Position of Interest</label>
+      <select name="position">
+        <option value="">Select a position</option>
+        <option>Executive Assistant</option>
+        <option>Operations Associate</option>
+        <option>Data & BI Support</option>
+      </select>
+
+      <label>Years of Experience</label>
+      <select name="experience">
+        <option value="">Select experience level</option>
+        <option>0-1</option>
+        <option>1-3</option>
+        <option>3-5</option>
+        <option>5+</option>
+      </select>
+
+      <label>Tell us about yourself *</label>
+      <textarea name="about" placeholder="Tell us about your background, skills, and why you're interested..." required></textarea>
+
+      <button class="btn" type="submit">Submit Application</button>
+      <div id="careersSuccess" class="success" style="display:none;">Application submitted. We'll review and contact you at exelytix@gmail.com.</div>
+    </form>
+  </main>
+
+  <footer class="site-footer container">© <span id="year5"></span> Exelytix</footer>
+
+  <script>
+  document.getElementById('year5').innerText = new Date().getFullYear();
+  document.getElementById('careersForm').addEventListener('submit', function(){
+    setTimeout(()=> {
+      document.getElementById('careersForm').reset();
+      document.getElementById('careersSuccess').style.display = 'block';
+    }, 400);
+  });
+  </script>
+</body>
+</html>
